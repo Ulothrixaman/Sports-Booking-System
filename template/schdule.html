@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility Booking System</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token }}">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Facility Booking System</h1>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="facility-select">Select Facility:</label>
+                        <select class="form-control" id="facility-select">
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="sport-select">Select Sport:</label>
+                        <select class="form-control" id="sport-select">
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="date-select">Select Date:</label>
+                        <input type="date" class="form-control" id="date-select">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Bookings for Selected Date and Sport</h2>
+                <table class="table table-bordered mt-3" id="bookings-table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Court/Resource</th>
+                            <th>Time Slot</th>
+                            <th>Booked By</th>
+                            <th>Booked For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Bookings will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Create a New Booking</h2>
+                <form id="booking-form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="court-select">Select Court/Resource:</label>
+                            <select class="form-control" id="court-select">
+                                <!-- Options will be populated dynamically -->
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="time-slot-select">Select Time Slot:</label>
+                            <select class="form-control" id="time-slot-select">
+                                <!-- Options will be populated dynamically -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="user-name">Your Name:</label>
+                            <input type="text" class="form-control" id="user-name" placeholder="Enter your name" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Create Booking</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include JS files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="{% static 'js/style.js' %}"></script>
+</body>
+</html>
