@@ -1,6 +1,6 @@
 ## IIT2021181
 
-## Facility Booking System
+## Facility Booking System[https://web-production-4985.up.railway.app/]
 This is a Django-based web application for booking facilities, such as sports courts and resources. The application allows users to:
 
 - View available facilities, sports, courts, and time slots dynamically.
@@ -116,4 +116,5 @@ The application provides several API endpoints for fetching data dynamically.
 - Facilities: /api/facilities/ (GET, POST)
 - Bookings: /api/bookings/ (GET, POST)
 
-![Screenshot from 2024-10-17 00-48-38](https://github.com/user-attachments/assets/acf8c0da-56a0-495c-866d-a63946baa7d0)
+# Demo
+![Screenshot from 2024-10-17 00-48-38](https://github.com/user-attachments/assets/3a5412b5-9dc0-4f41-964e-ab34ffd21b42)
