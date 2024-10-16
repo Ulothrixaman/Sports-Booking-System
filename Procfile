@@ -1,0 +1,1 @@
+web: gunicorn sportsbooking.wsgi --log-file-   
